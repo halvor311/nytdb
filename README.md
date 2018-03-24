@@ -1,1 +1,1 @@
-# nytdb
+# mern-boilerplate
