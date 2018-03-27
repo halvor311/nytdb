@@ -1,20 +1,15 @@
 import React from 'react';
 import Home from '../Home';
 
-export default class Search extends React.Component{
-
-  _handleChange = e => {
-    const {name, value} = e.target;
-    this.setState({[name]:value})
-  }
+export default class Search extends React.Component {
 
   render() {
 
-    const {getState} = this.props
+    const { getState } = this.props
 
     return (
       <div>
-        
+
         <div className="row">
           <div className="col-sm-12">
 
@@ -27,36 +22,36 @@ export default class Search extends React.Component{
             <div className="panel-body">
 
               {/* <!-- Here we create an HTML Form for handling the inputs--> */}
-              <form role="form" onSubmit={e=> {
+              <form role="form" onSubmit={e => {
                 e.preventDefault()
                 getState(this.state)
               }}>
 
                 {/* <!-- Here we create the text box for capturing the search term--> */}
                 <div className="form-group">
-                {/* Search */}
+                  {/* Search */}
                   <label for="search">Search Term:</label>
-                  <input onChange={(e)=> this._handleChange(e)} type="text" name='term'className="form-control" id="search-term" />
+                  <input onChange={(e) => this._handleInputChange(e)} type="text" name='term' className="form-control" id="search-term" />
                   {/* Start Year */}
                   <label for="exampleInputPassword1">Start Year (optional)</label>
-                  <input onChange={(e)=> this._handleChange(e)} type="text" name='startyear' className="form-control" id="exampleInputPassword1" placeholder="" />
+                  <input onChange={(e) => this._handleInputChange(e)} type="text" name='startyear' className="form-control" id="exampleInputPassword1" placeholder="" />
                   {/* End Year */}
                   <label for="exampleInputPassword1">End Year (optional)</label>
-                  <input onChange={(e)=> this._handleChange(e)} type="text" name='endyear' className="form-control" id="exampleInputPassword1" placeholder="" />
+                  <input onChange={(e) => this._handleInputChange(e)} type="text" name='endyear' className="form-control" id="exampleInputPassword1" placeholder="" />
                   {/* Button */}
-                  
+
                   <button type="submit" className="btn btn-default search">Search </button>
-                  
+
                 </div>
               </form>
             </div>
           </div>
         </div>
-      
-    </div>
+
+      </div>
     )
   }
-} 
-    
-  
- 
+}
+
+
+
